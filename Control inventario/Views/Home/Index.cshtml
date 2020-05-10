@@ -1,16 +1,161 @@
-﻿@{
-    ViewBag.Title = "Inicio";
+﻿
+@{
+    Layout = null;
 }
-    <header class="masthead text-center text-white">
-        <div class="masthead-content">
-            <div class="container">
-                <h2 class="masthead-heading mb-0">Gracias Por Visitarnos</h2>
-                <h4 class="masthead-subheading mb-0">Administra tus productos de forma eficiente</h4>
-                <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">Mas..</a>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Inventario App</title>
+    <link rel="icon" type="image/x-icon" href="~/Content/Img/Inventario.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="~/Content/startbootstrap-agency-gh-pages/css/styles.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+    <!-- Navegacion-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"></a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars ml-1"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="@Url.Action("Register","Account")">Registro</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="@Url.Action("Login","Account")">Iniciar Sesion</a></li>
+                    
+                </ul>
             </div>
         </div>
-        <div class="bg-circle-1 bg-circle"></div>
-        <div class="bg-circle-2 bg-circle"></div>
-        <div class="bg-circle-3 bg-circle"></div>
-        <div class="bg-circle-4 bg-circle"></div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-heading ">Bienvenido a Inventario  App!</div>
+            
+        </div>
     </header>
+    <!-- Servicios-->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Servicios</h2>
+                <br />
+                <br />
+
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x bg-primary">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-clipboard-check fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Control</h4>
+                    <p class="lead">Llevar un mejor control del inventario ya sea de un negocio chico hasta el de un almacen industrial sobre los productos y proveedores</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x bg-primary"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-laptop fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="my-3">Acceso web</h4>
+                    <p class="lead">Esta plaicacion web puede ser accesible mediante el internet pero antes estar registrado para acceder.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x bg-primary"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-lock fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="my-3">Seguridad web</h4>
+                    <p class="lead">La aplicacion web es seguro ya que requiera de una cuenta la cual es administraa por la apliacion ..</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Acerca de-->
+    <section class="page-section" id="about">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Acerca de</h2>
+                <br />
+             
+
+            </div>
+            <div class="text-center">
+                <p class="lead">Somos una empresala cual nos gusta brindar el servicio de inventario, tenemos bastante experiencia en el ambito para ofrecerte el merjor servicio con calidad y eficiencia.</p>
+
+            </div>
+
+            <img src="~/Content/Img/BODEGA.jpg" class=" img-fluid rounded " alt="Evento" style="  width: 50%;  display: block;       margin-left: auto;  margin-right: auto;">
+
+        
+        </div>
+
+    </section>
+
+    
+    <!-- Contacto-->
+    <section class="page-section" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Contacto</h2>
+                <br />
+               
+            </div>
+            <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                <div class="row align-items-stretch mb-5">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" id="name" type="text" placeholder="Tu nombre *" required="required" data-validation-required-message="Por favor ingresa tu nombre." />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" id="email" type="email" placeholder="Tu correo *" required="required" data-validation-required-message="Por favor ingresa tu correo." />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="form-group mb-md-0">
+                            <input class="form-control" id="phone" type="tel" placeholder="Tu numero telefonico *" required="required" data-validation-required-message="Por favor ingresa tu numero." />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-group-textarea mb-md-0">
+                            <textarea class="form-control" id="message" placeholder="Tu mensaje *" required="required" data-validation-required-message="Por favor ingresa tu mensaje."></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div id="success"></div>
+                    <button class="btn btn-success btn-xl text-uppercase" id="sendMessageButton" type="submit">Envia tu mensaje</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-left">Copyright © Inventario App 2020</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-info btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-info btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-info btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+               
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="~/Content/startbootstrap-agency-gh-pages/assets/mail/jqBootstrapValidation.js"></script>
+    <script src="~/Content/startbootstrap-agency-gh-pages/assets/mail/contact_me.js"></script>
+    <!-- Core theme JS-->
+    <script src="~/Content/startbootstrap-agency-gh-pages/js/scripts.js"></script>
+</body>
+</html>

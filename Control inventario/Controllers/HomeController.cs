@@ -10,21 +10,29 @@ namespace Control_inventario.Controllers
     {
         public ActionResult Index()
         {
-            return View();
-        }
+           
+                if (User.Identity.IsAuthenticated)
+                {
+                    return RedirectToAction("Index", "Principal");
+                }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+                return View();
 
-            return View();
-        }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+            }
 
-            return View();
-        }
+            public ActionResult About()
+            {
+                ViewBag.Message = "Your application description page.";
+
+                return View();
+            }
+
+            public ActionResult Contact()
+            {
+                ViewBag.Message = "Your contact page.";
+
+                return View();
+            }
     }
 }
