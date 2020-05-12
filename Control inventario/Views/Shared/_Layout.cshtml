@@ -23,6 +23,7 @@
 
     <!-- Custom styles for this template-->
     <link href="~/Content/sb-admin-2.min.css" rel="stylesheet">
+    <link href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" />
 
 </head>
 
@@ -48,11 +49,11 @@
                     <hr class="sidebar-divider my-0">
 
                 </li>
-                
+
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="@Url.Action("Index","Home")">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Principal</span>
                     </a>
@@ -70,7 +71,7 @@
                         Interface
                     </div>
                 </li>
-              
+
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
@@ -112,13 +113,13 @@
 
                 <!-- Heading -->
                 <li>
-                <div class="sidebar-heading">
-                    Addons
-                </div>
+                    <div class="sidebar-heading">
+                        Addons
+                    </div>
 
 
                 </li>
-               
+
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
@@ -168,7 +169,7 @@
                     </div>
 
                 </li>
-              
+
 
             </ul>
             <!-- End of Sidebar -->
@@ -195,8 +196,8 @@
 
 
                                 <div class="topbar-divider d-none d-sm-block"></div>
-                                </li>
-                                <!-- Nav Item - User Information -->
+                            </li>
+                            <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">
@@ -226,7 +227,7 @@
                                 </div>
                             </li>
 
-                          
+
 
                         </ul>
 
@@ -306,6 +307,8 @@
 
     <!-- Custom scripts for all pages-->
     <script src="~/Scripts/sb-admin-2.js"></script>
+    <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
 
     @RenderSection("scripts", required: false)
 

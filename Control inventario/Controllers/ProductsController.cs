@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using Control_inventario.Models;
 
 namespace Control_inventario.Controllers
@@ -39,7 +40,7 @@ namespace Control_inventario.Controllers
         // GET: Products/Create
         public ActionResult Create()
         {
-            ViewBag.SupplierId = new SelectList(db.Suppliers, "Id", "SupplierCode");
+            ViewBag.SupplierId = new SelectList(db.Suppliers, "Id", "SupplierName");
             return View();
         }
 
@@ -119,6 +120,16 @@ namespace Control_inventario.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult ProductBySupplier( int supplierId)
+        {
+
+        var products = db.Products.Where(p => p.SupplierId == supplierId).ToList();
+        return View(products);
+
+
+        }
+
 
         protected override void Dispose(bool disposing)
         {
