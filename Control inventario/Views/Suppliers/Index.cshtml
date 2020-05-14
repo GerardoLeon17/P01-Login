@@ -5,64 +5,45 @@
 }
 
 
-    <div class="masthead padspace ">
+
+
+
+
+        <div class="row justify-content-center">
+            <p class="display-4">
+                Lista de Proveedores
+            </p>
+        </div>
+
         <p>
-            @Html.ActionLink("Crear nuevo", "Create")
+            <a href="@Url.Action("Create","Suppliers")" class="btn btn-success btn-sm btn-icon-split">
+
+                <span class="icon text-white-50"> <i class="fas fa-plus"></i> </span>
+                <span class="text">Nuevo Proveedor</span>
+            </a>
         </p>
 
-
-
-        <table class="table ">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.SupplierCode)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.SupplierName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Email)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Phone)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Address)
-                </th>
-              
-            </tr>
-
+        <div class="row">
             @foreach (var item in Model)
             {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SupplierCode)
-            </td>
-            <th>
-              <a href="@Url.Action("ProductBySupplier","Products",new {supplierId=item.Id })">@item.SupplierName</a>
 
-            </th>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-      
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-
-        </tr>
-
-
+                <div class="col-xl-3 col-md-3 mb-4">
+                    <a href="@Url.Action("Details", "Suppliers", new { id = item.Id })">
+                        <div class="card border-bottom-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">@item.SupplierName</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">@item.SupplierCode</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-store fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
             }
-        </table>
-
-    </div>
+        </div>

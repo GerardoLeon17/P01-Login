@@ -8,9 +8,7 @@
 
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Supplier.SupplierCode)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.ProductCode)
         </th>
@@ -30,31 +28,30 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Supplier.SupplierCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Quantity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductCode)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Description)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Quantity)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Price)
+    </td>
+    <td>
+        <a href="@Url.Action("Edit", "Products", new { id = item.Id })" class="text-warning"><i class="fas fa-edit"></i> </a> |
+        <a href="@Url.Action("Details", "Products", new { id = item.Id })" class="text-info"><i class="fas fa-info-circle"></i></a> |
+        <a href="@Url.Action("Delete", "Products", new { id = item.Id })" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+    
+    </td>
+</tr>
 }
 
 </table>

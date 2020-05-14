@@ -11,6 +11,7 @@ using Control_inventario.Models;
 
 namespace Control_inventario.Controllers
 {
+    [Authorize]
     public class ProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

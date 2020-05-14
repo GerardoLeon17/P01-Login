@@ -5,72 +5,83 @@
 }
 
 
-<div class="masthead padspace">
+    <div class="masthead padspace">
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table table-sm " id="myProduct">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Supplier.SupplierName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ProductCode)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ProductName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Quantity)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Price)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-       
-        <tbody>
-            @foreach (var item in Model)
-            {
+
+        <div class="row justify-content-center">
+            <p class="display-4">
+                Lista de Productos
+            </p>
+        </div>
+
+        <p>
+            <a href="@Url.Action("Create","Products")" class="btn btn-success btn-sm btn-icon-split">
+
+                <span class="icon text-white-50"> <i class="fas fa-plus"></i> </span>
+                <span class="text">Nuevo producto</span>
+            </a>
+        </p>
+        <table class="table table-sm " id="myProduct">
+            <thead>
                 <tr>
-                    <td>
-                        <a href="@Url.Action("ProductBySupplier","Products",new {supplierId=item.SupplierId })">@item.Supplier.SupplierName</a>
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ProductCode)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ProductName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Quantity)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Price)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Supplier.SupplierName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductCode)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Quantity)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th></th>
                 </tr>
-            }
+            </thead>
 
-        </tbody>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="@Url.Action("ProductBySupplier","Products",new {supplierId=item.SupplierId })">@item.Supplier.SupplierName</a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Edit", "Products", new { id = item.Id })" class="text-warning"><i class="fas fa-edit"></i> </a> |
+                            <a href="@Url.Action("Details", "Products", new { id = item.Id })" class="text-info"><i class="fas fa-info-circle"></i></a> |
+                            <a href="@Url.Action("Delete", "Products", new { id = item.Id })" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                }
 
-       
+            </tbody>
 
-    </table>
-</div>
+
+
+        </table>
+    </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 
